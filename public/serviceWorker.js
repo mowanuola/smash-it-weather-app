@@ -6,6 +6,8 @@ const assets = [
   "/main.js",
   "/assets/logo.png",
   "/assets/favicon.ico.",
+  "/assets/logo512x512.png",
+  "/assets/logo192x192.png",
 ];
 
 self.addEventListener("install", (installEvent) => {
