@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="manifest" href="manifest.json" />
+    <meta name="description" content="Smash It Weather App" />
+    <meta name="theme-color" content="#ff8568" />
+    <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="assets/logo192x192.png" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Raleway:wght@120&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.14.0/css/all.css"
+      integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc"
+      crossorigin="anonymous"
+    />
+    <title>Weather App</title>
+  </head>
+  <body onload="onLoad()">
+    <main>
+      <nav class="navbar navbar-light bg-light">
+        <a class="navbar-brand" href="#">
+          <img
+            src="assets/logo.png"
+            width="30"
+            height="30"
+            alt="logo"
+            loading="lazy"
+          />
+          Smash it Weather App
+        </a>
+      </nav>
+      <div id="cover-spin" class="d-none"></div>
+
+      <div class="container pt-4 mt-auto mt-md-5">
+        <div class="row center-card p-5 rounded">
+          <div
+            class="col-12 col-md-5 col d-flex flex-column align-self-center search"
+          >
+            <div>
+              <form action="#" onsubmit="onSubmit(); return false">
+                <label for="city-name"> City </label>
+                <div class="row ml-auto mr-auto">
+                  <input
+                    type="text"
+                    class="form-control col-6"
+                    name="city-name"
+                    id="city-name"
+                  />
+                  <button type="submit" class="btn button ml-3">Search</button>
+                </div>
+              </form>
+              <div
+                class="alert alert-weather mt-4 col-md-8 col-12"
+                id="alert"
+              ></div>
+            </div>
+          </div>
+
+          <div class="col-12 col-md-7 col weather-info">
+            <div class="row text-center mb-3 p-2 d-flex flex-column">
+              <span id="city"></span>
+              <span id="datetime"></span>
+              <br />
+              <div>
+                <span class="temp icon"></span>
+                <img
+                  src=""
+                  id="w_icon"
+                  class="w_icon"
+                  height="50"
+                  width="50"
+                  alt="weather_icon"
+                />
+              </div>
+              <span id="season"></span>
+            </div>
+
+            <div class="row">
+              <div class="col-12 col-md-6 col d-flex flex-column">
+                <div
+                  class="item border widget pb-4 pt-2 text-center mb-4 mb-md-auto"
+                >
+                  <i class="fas fa-thermometer-empty mb-3 icon"></i> Feels Like
+                  <p class="m-auto temp"></p>
+                </div>
+              </div>
+              <div class="col-12 col-md-6 col d-flex flex-column">
+                <div class="item border widget pb-4 pt-2 text-center">
+                  <i class="fas fa-tint mb-3 icon"></i> Humidity
+                  <p class="m-auto" id="humid"></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="search_results">
+          <h4 class="icon">Recent Search</h4>
+          <div id="latest_search"></div>
+        </div>
+      </div>
+    </main>
+  </body>
+  <script src="main.js"></script>
+</html>
